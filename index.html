@@ -6,10 +6,18 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <div class="container">
-      <div id="app">
-
-      </div>
+    <div id="app" class="container">
+      <h1>Learn Polish with the flashcards!</h1>
+      <form>
+        <label for="front">Front
+          <input type="text" id="front" placeholder="Enter a word of phrase">
+        </label>
+        <label for="back">Back
+          <input type="text" id="back" placeholder="Enter a word of phrase">
+        </label>
+        <button>Create a new card</button>
+        <span class="error">Please ensure all fields are completed.</span>
+      </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="js/app.js" type="text/javascript"></script>
