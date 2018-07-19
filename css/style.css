@@ -12,6 +12,7 @@ body {
 }
 .container {
   width: 80%;
+  max-width: 1300px;
   margin: 0 auto;
 }
 h1 {
@@ -19,11 +20,15 @@ h1 {
   margin-top: 30px;
   margin-bottom: 30px;
 }
+
+/*Form*/
 form {
   text-align: center;
+  margin-bottom: 40px;
 }
 label {
   margin-right: 20px;
+  margin-bottom: 10px;
   font-size: 1rem;
   display: inline-block;
 }
@@ -53,4 +58,62 @@ button:active {
 }
 span.error {
   display: none;
+}
+
+/*Form respo*/
+@media (max-width: 800px){
+  label {
+    display: block;
+    margin-right: 0;
+  }
+  button {
+    margin-left: -20px;
+  }
+}
+@media (max-width: 400px){
+  input {
+    display: block;
+    width: 80%;
+    margin: 5px auto;
+    text-align: center;
+  }
+  button {
+    margin: 10px auto;
+  }
+}
+
+/*Cards*/
+.list-of-cards {
+  list-style-type: none;
+}
+.list-of-cards li {
+  width: calc(25% - 20px);
+  min-height: 250px;
+  margin: 10px;
+  background-color: lightgreen;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px;
+}
+.list-of-cards li p {
+  width: 100%;
+  text-align: center;
+}
+/*Cards respo*/
+@media (max-width: 900px){
+  .list-of-cards li {
+    width: calc(33.33% - 20px);
+  }
+}
+@media (max-width: 650px){
+  .list-of-cards li {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 480px){
+  .list-of-cards li {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+  }
 }
