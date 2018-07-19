@@ -101,8 +101,6 @@ span.error {
   background-color: lightgreen;
   border-radius: 5px;
   position: absolute;
-  backface-visibility: hidden;
-  transition: transform 0.8s linear 0s;
 }
 
 /*Cards respo*/
@@ -122,18 +120,4 @@ span.error {
     width: 80%;
     margin: 10px auto;
   }
-}
-
-/*Rotate effect*/
-li p:first-child {
-  transform: perspective(600px) rotateY(0deg);
-}
-li p:nth-child(2) {
-  transform: perspective(600px) rotateY(-180deg);
-}
-li:hover p:first-child {
-  transform: perspective(600px) rotateY(180deg);
-}
-li:hover p:nth-child(2) {
-  transform: perspective(600px) rotateY(0deg);
 }

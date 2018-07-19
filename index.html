@@ -8,23 +8,23 @@
   <body>
     <div id="app" class="container">
       <h1>Learn Polish with the flashcards!</h1>
-      <form>
+      <div>
         <label for="front">Front
-          <input type="text" id="front" placeholder="Enter a word of phrase">
+          <input v-model="newFront" type="text" id="front" placeholder="Enter a word of phrase">
         </label>
         <label for="back">Back
-          <input type="text" id="back" placeholder="Enter a word of phrase">
+          <input v-model="newBack" type="text" id="back" placeholder="Enter a word of phrase">
         </label>
-        <button>Create a new card</button>
+        <button v-on:click="createCard">Create a new card</button>
         <span class="error">Please ensure all fields are completed.</span>
-      </form>
+      </div>
 
       <ul class="list-of-cards">
-        <li v-for="item in cards">
-          <p class="card">{{ item.front }}
+        <li v-for="item in cards" @click="toggleCard(item)">
+          <p v-show="!item.flipped" class="card">{{ item.front }}
             <span class="delete">x</span>
           </p>
-          <p class="card">{{ item.back }}
+          <p v-show="item.flipped" class="card">{{ item.back }}
             <span class="delete">x</span>
           </p>
         </li>

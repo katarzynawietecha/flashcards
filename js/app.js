@@ -12,7 +12,7 @@ const cards = [
   {
     front: "ladybird",
     back: "biedronka",
-    fipped: false
+    flipped: false
   },
   {
     front: "rabbit",
@@ -39,9 +39,20 @@ const cards = [
 new Vue ({
   el: "#app",
   data: {
-    cards: cards
+    cards: cards,
+    newFront: "",
+    newBack: ""
   },
   methods: {
-
+    toggleCard: function(item){
+      item.flipped = !item.flipped;
+    },
+    createCard: function(){
+      this.cards.push({
+        front: this.newFront,
+        back: this.newBack,
+        flipped: false
+      });
+    }
   }
 });
