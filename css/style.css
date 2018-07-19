@@ -87,18 +87,24 @@ span.error {
   list-style-type: none;
 }
 .list-of-cards li {
-  width: calc(25% - 20px);
-  min-height: 250px;
-  margin: 10px;
-  background-color: lightgreen;
-  border-radius: 5px;
+  position: relative;
   display: inline-block;
-  padding: 10px;
+  width: calc(25% - 20px);
+  height: 250px;
+  margin: 10px;
 }
 .list-of-cards li p {
   width: 100%;
+  height: 100%;
   text-align: center;
+  padding: 10px;
+  background-color: lightgreen;
+  border-radius: 5px;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.8s linear 0s;
 }
+
 /*Cards respo*/
 @media (max-width: 900px){
   .list-of-cards li {
@@ -116,4 +122,18 @@ span.error {
     width: 80%;
     margin: 10px auto;
   }
+}
+
+/*Rotate effect*/
+li p:first-child {
+  transform: perspective(600px) rotateY(0deg);
+}
+li p:nth-child(2) {
+  transform: perspective(600px) rotateY(-180deg);
+}
+li:hover p:first-child {
+  transform: perspective(600px) rotateY(180deg);
+}
+li:hover p:nth-child(2) {
+  transform: perspective(600px) rotateY(0deg);
 }
