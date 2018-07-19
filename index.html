@@ -13,9 +13,9 @@
           <input v-model="newFront" type="text" id="front" placeholder="Enter a word of phrase">
         </label>
         <label for="back">Back
-          <input v-model="newBack" type="text" id="back" placeholder="Enter a word of phrase">
+          <input v-model="newBack" @keypress.enter="createCard" type="text" id="back" placeholder="Enter a word of phrase">
         </label>
-        <button v-on:click="createCard">Create a new card</button>
+        <button @click="createCard">Create a new card</button>
         <span class="error">Please ensure all fields are completed.</span>
       </div>
 
