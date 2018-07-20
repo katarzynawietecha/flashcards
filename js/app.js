@@ -41,18 +41,27 @@ new Vue ({
   data: {
     cards: cards,
     newFront: "",
-    newBack: ""
+    newBack: "",
+    hasError: false
   },
   methods: {
     toggleCard: function(item){
       item.flipped = !item.flipped;
     },
     createCard: function(){
-      this.cards.push({
-        front: this.newFront,
-        back: this.newBack,
-        flipped: false
-      });
+      if (!this.newFront || !this.newBack){
+        this.hasError = true;
+      } else {
+        this.cards.push({
+          front: this.newFront,
+          back: this.newBack,
+          flipped: false
+        });
+        //clearing input fields
+        this.newFront = "";
+        this.newBack = "";
+        this.hasError= false;
+      }
     }
   }
 });

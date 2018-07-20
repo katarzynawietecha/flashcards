@@ -15,8 +15,8 @@
         <label for="back">Back
           <input v-model="newBack" @keypress.enter="createCard" type="text" id="back" placeholder="Enter a word of phrase">
         </label>
-        <button @click="createCard">Create a new card</button>
-        <span class="error">Please ensure all fields are completed.</span>
+        <button @click="createCard">Create a new card</button><br>
+        <span v-show="hasError" class="error">Please ensure all fields are completed.</span>
       </div>
 
       <ul class="list-of-cards">

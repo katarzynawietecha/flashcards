@@ -57,7 +57,7 @@ button:active {
   border-color: #3f3445;
 }
 span.error {
-  display: none;
+  color: red;
 }
 
 /*Form respo*/
