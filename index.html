@@ -8,7 +8,7 @@
   <body>
     <div id="app" class="container">
       <h1>Learn Polish with the flashcards!</h1>
-      <div>
+      <div class="form">
         <label for="front">Front
           <input v-model="newFront" type="text" id="front" placeholder="Enter a word of phrase">
         </label>
@@ -20,12 +20,12 @@
       </div>
 
       <ul class="list-of-cards">
-        <li v-for="item in cards" @click="toggleCard(item)">
+        <li v-for="(item, index) in cards" @click="toggleCard(item)">
           <p v-show="!item.flipped" class="card">{{ item.front }}
-            <span class="delete">x</span>
+            <span @click="cards.splice(index, 1)" class="delete">x</span> <!-- delete 1 element with this (clicked) index-->
           </p>
           <p v-show="item.flipped" class="card">{{ item.back }}
-            <span class="delete">x</span>
+            <span @click="cards.splice(index, 1)" class="delete">x</span>
           </p>
         </li>
       </ul>
