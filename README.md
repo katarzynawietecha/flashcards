@@ -12,7 +12,7 @@ This project is released under the MIT License.
 
 **Demo**
 
-https://wietecha-mrzyglod.github.io/flashcards/
+https://katarzynawietecha.github.io/flashcards/
 
 
 **Technologies Used**
